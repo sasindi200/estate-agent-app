@@ -16,7 +16,7 @@
                 "images/prop1_4.jpg",
                 "images/prop1_5.jpg",
                 "images/prop1_6.jpg",
-                "images/prop1_7.jpg",
+                "images/prop1_7.jpg"
             ],
             "floorPlan": "images/prop1_8.jpg",
             "url":"properties/prop1.html",
@@ -43,7 +43,7 @@
                 "images/prop2_3.jpg",
                 "images/prop2_4.jpg",
                 "images/prop2_5.jpg",
-                "images/prop2_6.jpg",
+                "images/prop2_6.jpg"
                 
             ],
             "floorPlan": "images/prop2_8.jpg",
@@ -71,7 +71,7 @@
                 "images/prop3_3.jpg",
                 "images/prop3_4.jpg",
                 "images/prop3_5.jpg",
-                "images/prop3_6.jpg",
+                "images/prop3_6.jpg"
                 
             ],
             "floorPlan": "images/prop2_7.jpg",
@@ -99,14 +99,14 @@
                 "images/prop4_3.jpg",
                 "images/prop4_4.jpg",
                 "images/prop4_5.jpg",
-                "images/prop4_6.jpg",
+                "images/prop4_6.jpg"
                 
             ],
             "floorPlan": "images/prop4_8.jpg",
             "url":"properties/prop4.html",
             "added": {
                 "month":"March",
-                "day":04,
+                "day":15,
                 "year":2025
             }
 
@@ -128,7 +128,7 @@
                 "images/prop5_4.jpg",
                 "images/prop5_5.jpg",
                 "images/prop5_6.jpg",
-                "images/prop5_7.jpg",
+                "images/prop5_7.jpg"
             ],
             "floorPlan": "images/prop5_8.jpg",
             "url":"properties/prop5.html",
@@ -155,7 +155,7 @@
                 "images/prop6_3.jpg",
                 "images/prop6_4.jpg",
                 "images/prop6_5.jpg",
-                "images/prop6_6.jpg",
+                "images/prop6_6.jpg"
                 
             ],
             "floorPlan": "images/prop6_8.jpg",
@@ -184,7 +184,7 @@
                 "images/prop7_4.jpg",
                 "images/prop7_5.jpg",
                 "images/prop7_6.jpg",
-                "images/prop7_7.jpg",
+                "images/prop7_7.jpg"
             ],
             "floorPlan": "images/prop7_8.jpg",
             "url":"properties/prop7.html",
