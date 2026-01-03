@@ -1,0 +1,203 @@
+{
+    "properties": [
+        {
+            "id": "prop1",
+            "type": "House",
+            "bedroom": 2,
+            "price": 7500000,
+            "tenure": "Freehold",
+            "description": "A warm and comfortable home that is ideal for families, with illuminated rooms and a serene environment.",
+            "longDescription": "The warm, welcoming nature of te house makes it suitable for families, as it has a light, airy feel with a serene ambiance.The house has enough space to accommodate a family, and neighborhood around the house is also quiet and friendly.",
+            "postcode": "BR50",
+            "images": [
+                "images/prop1_1.jpg",
+                "images/prop1_2.jpg",
+                "images/prop1_3.jpg",
+                "images/prop1_4.jpg",
+                "images/prop1_5.jpg",
+                "images/prop1_6.jpg",
+                "images/prop1_7.jpg",
+            ],
+            "floorPlan": "images/prop1_8.jpg",
+            "url":"properties/prop1.html",
+            "added": {
+                "month":"October",
+                "day":12,
+                "year":2022
+            }
+
+        },
+        {
+            "id": "prop2",
+            "type": "Flat",
+            "bedroom": 3,
+            "price": 3999950,
+            "tenure": "Leasehold",
+            "description": "A fashionable modern house with intelligent design, perfectly suited to living in the city",
+            "longDescription": "A spacious two-roomed home with ample space to accomodate a family.The living spaces and bedrooms are spacious and well designed for comfort and functionality and there is also room in backyard for either play or entertaining friends.",
+            "location": "Petts Wood Road, Petts Wood, Orpington BR5",
+            "postcode": "BR23",
+            "images": [
+                "images/prop2_1.jpg",
+                "images/prop2_2.jpg",
+                "images/prop2_3.jpg",
+                "images/prop2_4.jpg",
+                "images/prop2_5.jpg",
+                "images/prop2_6.jpg",
+                
+            ],
+            "floorPlan": "images/prop2_8.jpg",
+            "url":"properties/prop2.html",
+            "added": {
+                "month":"December",
+                "day":24,
+                "year":2025
+            }
+
+        },
+        {
+            "id": "prop3",
+            "type": "Apartment",
+            "bedroom": 3,
+            "price": 15000,
+            "tenure": "Rental",
+            "description": "A large house with lots of space, ideal for large families or when accommodating guests.",
+            "longDescription": "This well-maintained starter home is ideal for first-time purchases, as it provides simplicity without sacrificing comfort. It's easy to move in and put personal touches on it.",
+            "location": "Petts Wood Road, Petts Wood, Orpington BR5",
+            "postcode": "BR76",
+            "images": [
+                "images/prop3_1.jpg",
+                "images/prop3_2.jpg",
+                "images/prop3_3.jpg",
+                "images/prop3_4.jpg",
+                "images/prop3_5.jpg",
+                "images/prop3_6.jpg",
+                
+            ],
+            "floorPlan": "images/prop2_7.jpg",
+            "url":"properties/prop3.html",
+            "added": {
+                "month":"October",
+                "day":11,
+                "year":2025
+            }
+
+        },
+        {
+            "id": "prop4",
+            "type": "House",
+            "bedroom": 3,
+            "price": 950000,
+            "tenure": "Joint ownership",
+            "description": "A simple, well-kept house – just what first-time buyers are looking for",
+            "longDescription": "A beautiful house with high-end finishes, perfect for luxury looking life style. The best part is the modern kitchen and living space.",
+            "location": "Petts Wood Road, Petts Wood, Orpington BR5",
+            "postcode": "BR11",
+            "images": [
+                "images/prop4_1.jpg",
+                "images/prop4_2.jpg",
+                "images/prop4_3.jpg",
+                "images/prop4_4.jpg",
+                "images/prop4_5.jpg",
+                "images/prop4_6.jpg",
+                
+            ],
+            "floorPlan": "images/prop4_8.jpg",
+            "url":"properties/prop4.html",
+            "added": {
+                "month":"March",
+                "day":04,
+                "year":2025
+            }
+
+        },
+        {
+            "id": "prop5",
+            "type": "Villa",
+            "bedroom": 2,
+            "price": 25000000,
+            "tenure": "Freehold",
+            "description": "Elegant residence featuring upmarket finishes.",
+            "longDescription": "A beautiful home with luxury finishes, capable of providing the luxury lifestyle. All the details in the house have been designed for both comfort and luxury, from the modern kitchen to the living room, ideal for those that want the luxury lifestyle.",
+            "location": "Petts Wood Road, Petts Wood, Orpington BR5",
+            "postcode": "BR43",
+            "images": [
+                "images/prop5_1.jpg",
+                "images/prop5_2.jpg",
+                "images/prop5_3.jpg",
+                "images/prop5_4.jpg",
+                "images/prop5_5.jpg",
+                "images/prop5_6.jpg",
+                "images/prop5_7.jpg",
+            ],
+            "floorPlan": "images/prop5_8.jpg",
+            "url":"properties/prop5.html",
+            "added": {
+                "month":"November",
+                "day":12,
+                "year":2025
+            }
+
+        },
+        {
+            "id": "prop6",
+            "type": "Townhouse",
+            "bedroom": 3,
+            "price": 12000,
+            "tenure": "Leasehold",
+            "description": "It is situated in a quiet and amicable surroundings, providing privacy as well as comfort.",
+            "longDescription": "This house is located in a very quiet and cordial neighborhood. The house ensures a private and quiet setting. This makes it a very good retreat from the bustle of everyday life.",
+            "location": "Petts Wood Road, Petts Wood, Orpington BR5",
+            "postcode": "BR05",
+            "images": [
+                "images/prop6_1.jpg",
+                "images/prop6_2.jpg",
+                "images/prop6_3.jpg",
+                "images/prop6_4.jpg",
+                "images/prop6_5.jpg",
+                "images/prop6_6.jpg",
+                
+            ],
+            "floorPlan": "images/prop6_8.jpg",
+            "url":"properties/prop6.html",
+            "added": {
+                "month":"February",
+                "day":26,
+                "year":2025
+            }
+
+        },
+        {
+            "id": "prop7",
+            "type": "House",
+            "bedroom": 2,
+            "price": 55000,
+            "tenure": "Freehold",
+            "description": "A clean and move-in ready house that needs nothing from you; all you need to do is move your furniture",
+            "longDescription": "This move-in ready dwelling requires nothing but the move of furniture inside. Clean and well-kept and well-designed, this home provides convenience and comfort to whoever wants to move right in",
+            "location": "Petts Wood Road, Petts Wood, Orpington BR5",
+            "postcode": "BR55",
+            "images": [
+                "images/prop7_1.jpg",
+                "images/prop7_2.jpg",
+                "images/prop7_3.jpg",
+                "images/prop7_4.jpg",
+                "images/prop7_5.jpg",
+                "images/prop7_6.jpg",
+                "images/prop7_7.jpg",
+            ],
+            "floorPlan": "images/prop7_8.jpg",
+            "url":"properties/prop7.html",
+            "added": {
+                "month":"March",
+                "day":29,
+                "year":2025
+            }
+
+        }
+        
+        
+
+    ]
+}
+
