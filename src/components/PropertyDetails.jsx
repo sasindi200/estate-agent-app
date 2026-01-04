@@ -25,8 +25,8 @@ const PropertyDetails = ({ property, onBack, onAddToFavorites, isFavorite }) => 
     <div className="property-details-container">
       <button onClick={onBack} className="back-btn">← Back to Search</button>
       
-      <div className = "property-header">
-        <h1>£{property.price.toLocaleString()}</h1>
+      <div className="property-header">
+        <h1>Rs. {property.price.toLocaleString()}</h1>
         <button 
           onClick={() => onAddToFavorites(property)}
           className={`favorite-btn-large ${isFavorite ? 'active' : ''}`}
@@ -35,7 +35,7 @@ const PropertyDetails = ({ property, onBack, onAddToFavorites, isFavorite }) => 
         </button>
       </div>
 
-      <div className = "property-quick-info">
+      <div className="property-quick-info">
         <span>{property.type}</span>
         <span>{property.bedrooms} Bedroom{property.bedrooms > 1 ? 's' : ''}</span>
         <span>{property.location}</span>
@@ -45,9 +45,9 @@ const PropertyDetails = ({ property, onBack, onAddToFavorites, isFavorite }) => 
         <div className="main-image-container">
           <button className="image-nav prev" onClick={handlePrevImage}>‹</button>
           <img 
-            src = {property.images[currentImageIndex]} 
-            alt ={`Property ${currentImageIndex + 1}`}
-            className = "main-image"
+            src={property.images[currentImageIndex]} 
+            alt={`Property ${currentImageIndex + 1}`}
+            className="main-image"
           />
           <button className="image-nav next" onClick={handleNextImage}>›</button>
         </div>
@@ -55,8 +55,8 @@ const PropertyDetails = ({ property, onBack, onAddToFavorites, isFavorite }) => 
         <div className="thumbnail-container">
           {property.images.map((image, index) => (
             <img 
-              key = {index}
-              src = {image}
+              key={index}
+              src={image}
               alt={`Thumbnail ${index + 1}`}
               className={`thumbnail ${index === currentImageIndex ? 'active' : ''}`}
               onClick={() => handleThumbnailClick(index)}
@@ -65,7 +65,7 @@ const PropertyDetails = ({ property, onBack, onAddToFavorites, isFavorite }) => 
         </div>
       </div>
 
-      <Tabs className ="property-tabs">
+      <Tabs className="property-tabs">
         <TabList>
           <Tab>Description</Tab>
           <Tab>Floor Plan</Tab>
@@ -73,10 +73,10 @@ const PropertyDetails = ({ property, onBack, onAddToFavorites, isFavorite }) => 
         </TabList>
 
         <TabPanel>
-          <div className = "tab-content">
+          <div className="tab-content">
             <h2>Property Description</h2>
             <p>{property.longDescription || property.description}</p>
-            <div className = "property-features">
+            <div className="property-features">
               <h3>Key Features</h3>
               <ul>
                 <li>{property.bedrooms} Bedroom{property.bedrooms > 1 ? 's' : ''}</li>
@@ -89,29 +89,29 @@ const PropertyDetails = ({ property, onBack, onAddToFavorites, isFavorite }) => 
         </TabPanel>
 
         <TabPanel>
-          <div className = "tab-content">
+          <div className="tab-content">
             <h2>Floor Plan</h2>
             <img 
-              src = {property.floorPlan || property.images[0]} 
-              alt = "Floor plan"
-              className = "floor-plan-image"
+              src={property.floorPlan || property.images[0]} 
+              alt="Floor plan"
+              className="floor-plan-image"
             />
           </div>
         </TabPanel>
 
         <TabPanel>
-          <div className = "tab-content">
+          <div className="tab-content">
             <h2>Location</h2>
             <p><strong>Address:</strong> {property.location}</p>
-            <div className = "map-container">
+            <div className="map-container">
               <iframe
                 src={property.mapUrl}
-                width = "100%"
-                height = "450"
-                style = {{ border: 0 }}
+                width="100%"
+                height="450"
+                style={{ border: 0 }}
                 allowFullScreen=""
-                loading = "lazy"
-                title = "Property location map"
+                loading="lazy"
+                title="Property location map"
               />
             </div>
           </div>

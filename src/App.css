@@ -5,7 +5,7 @@
 }
 
 :root {
-  --primary-color: #2c3e50;
+  --primary-color: #9c4848;
   --secondary-color: #3498db;
   --accent-color: #e74c3c;
   --background: #ecf0f1;
@@ -27,47 +27,51 @@ body {
   min-height: 100vh;
 }
 
-/* Search Container */
+/* Search Container - Fully Responsive */
 .search-container {
   background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
   color: white;
-  padding: 3rem 2rem;
+  padding: 3rem 1rem;
   text-align: center;
+  min-height: auto;
+  width: 120%;
 }
 
 .search-container h1 {
-  font-size: 2.5rem;
+  font-size: clamp(3rem, 10vw, 5rem);
   margin-bottom: 0.5rem;
   font-weight: 600;
 }
 
 .search-container h3 {
-  font-size: 1.2rem;
+  font-size: clamp(0.9rem, 3vw, 1.2rem);
   font-weight: 300;
   margin-bottom: 2rem;
   opacity: 0.9;
+  padding: 0 1rem;
 }
 
 .search-form {
-  max-width: 1200px;
+  max-width: 1300px;
+  width: min(120%, 1300px);
   margin: 0 auto;
   background: white;
-  padding: 2rem;
+  padding: clamp(1rem, 3vw, 2rem);
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
 }
 
 .form-row {
   display: flex;
-  gap: 1rem;
+  gap: clamp(0.5rem, 2vw, 1rem);
   margin-bottom: 1.5rem;
   flex-wrap: wrap;
 }
 
 .form-group {
-  flex: 1;
-  min-width: 200px;
-  text-align: left;
+  flex: 1 1 200px;
+  min-width: 0;
 }
 
 .form-group label {
@@ -75,16 +79,17 @@ body {
   margin-bottom: 0.5rem;
   color: var(--text-dark);
   font-weight: 500;
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
 }
 
 .form-control {
   width: 100%;
-  padding: 0.75rem;
+  padding: clamp(0.5rem, 2vw, 0.75rem);
   border: 2px solid var(--border-color);
   border-radius: 5px;
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 2vw, 1rem);
   transition: border-color 0.3s;
+  box-sizing: border-box;
 }
 
 .form-control:focus {
@@ -97,16 +102,18 @@ body {
   gap: 1rem;
   justify-content: center;
   margin-top: 2rem;
+  flex-wrap: wrap;
 }
 
 .btn {
-  padding: 0.75rem 2rem;
+  padding: clamp(0.5rem, 2vw, 0.75rem) clamp(1rem, 3vw, 2rem);
   border: none;
   border-radius: 5px;
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 2vw, 1rem);
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s;
+  min-width: 150px;
 }
 
 .btn-primary {
@@ -134,7 +141,7 @@ body {
   display: flex;
   gap: 2rem;
   padding: 2rem;
-  max-width: 1400px;
+  max-width: 1600px;
   margin: 0 auto;
 }
 
@@ -397,7 +404,7 @@ body {
   background-color: rgba(231, 76, 60, 0.1);
 }
 
-/* Property Details */
+/* Property Details Page */
 .property-details-container {
   max-width: 1200px;
   margin: 2rem auto;
@@ -538,6 +545,7 @@ body {
   opacity: 0.6;
   transition: all 0.3s;
   border: 2px solid transparent;
+  flex-shrink: 0;
 }
 
 .thumbnail:hover {
@@ -549,7 +557,7 @@ body {
   border-color: var(--secondary-color);
 }
 
-/* Tabs */
+/* React Tabs Styling */
 .property-tabs {
   margin-top: 2rem;
 }
@@ -559,6 +567,8 @@ body {
   margin-bottom: 2rem;
   display: flex;
   gap: 1rem;
+  padding: 0;
+  list-style: none;
 }
 
 .react-tabs__tab {
@@ -570,6 +580,7 @@ body {
   color: var(--text-light);
   border-bottom: 3px solid transparent;
   transition: all 0.3s;
+  list-style: none;
 }
 
 .react-tabs__tab:hover {
@@ -580,6 +591,11 @@ body {
   color: var(--secondary-color);
   border-bottom-color: var(--secondary-color);
   font-weight: 600;
+}
+
+.react-tabs__tab:focus {
+  outline: none;
+  box-shadow: none;
 }
 
 .tab-content {
@@ -598,6 +614,12 @@ body {
   color: var(--primary-color);
 }
 
+.tab-content p {
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
 .property-features ul {
   list-style: none;
   padding: 0;
@@ -607,6 +629,7 @@ body {
   padding: 0.5rem 0;
   padding-left: 1.5rem;
   position: relative;
+  color: var(--text-dark);
 }
 
 .property-features li:before {
@@ -619,6 +642,7 @@ body {
 
 .floor-plan-image {
   max-width: 100%;
+  height: auto;
   border-radius: 10px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
@@ -630,8 +654,22 @@ body {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive Design */
+.map-container iframe {
+  width: 100%;
+  height: 450px;
+  border: none;
+}
+
+/* Responsive Design - Tablet (1024px and below) */
 @media (max-width: 1024px) {
+  .search-container {
+    padding: 2.5rem 1rem;
+  }
+  
+  .search-form {
+    width: 90%;
+  }
+
   .main-container {
     flex-direction: column;
   }
@@ -645,11 +683,25 @@ body {
   .property-grid {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   }
+
+  .property-details-container {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .main-image-container {
+    height: 400px;
+  }
 }
 
+/* Responsive Design - Mobile (768px and below) */
 @media (max-width: 768px) {
+  .search-container {
+    padding: 2rem 0.5rem;
+  }
+
   .search-container h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .search-container h3 {
@@ -657,23 +709,28 @@ body {
   }
 
   .search-form {
+    width: 95%;
     padding: 1.5rem;
   }
 
   .form-row {
     flex-direction: column;
+    gap: 0.5rem;
   }
 
   .form-group {
+    flex: 1 1 100%;
     min-width: 100%;
   }
 
   .button-group {
     flex-direction: column;
+    gap: 0.75rem;
   }
 
   .btn {
     width: 100%;
+    min-width: auto;
   }
 
   .property-grid {
@@ -700,19 +757,66 @@ body {
     font-size: 1.5rem;
   }
 
+  .image-nav.prev {
+    left: 10px;
+  }
+
+  .image-nav.next {
+    right: 10px;
+  }
+
   .property-quick-info {
     flex-direction: column;
     gap: 0.5rem;
   }
+
+  .react-tabs__tab-list {
+    gap: 0.5rem;
+    overflow-x: auto;
+  }
+
+  .react-tabs__tab {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+
+  .thumbnail {
+    width: 80px;
+    height: 80px;
+  }
+
+  .main-container {
+    padding: 1rem;
+  }
+
+  .favorites-container {
+    padding: 1rem;
+  }
 }
 
+/* Responsive Design - Small Mobile (480px and below) */
 @media (max-width: 480px) {
   .search-container {
-    padding: 2rem 1rem;
+    padding: 1.5rem 0.5rem;
+  }
+
+  .search-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .search-container h3 {
+    font-size: 0.9rem;
+  }
+
+  .search-form {
+    width: calc(100% - 1rem);
+    padding: 1rem;
   }
 
   .property-details-container {
     padding: 1rem;
+    margin: 0.5rem;
   }
 
   .main-image-container {
@@ -722,5 +826,18 @@ body {
   .thumbnail {
     width: 70px;
     height: 70px;
+  }
+
+  .property-card {
+    margin-bottom: 1rem;
+  }
+
+  .favorites-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .clear-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
   }
 }

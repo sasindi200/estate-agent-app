@@ -67,7 +67,7 @@ const SearchBar = ({ onSearch }) => {
           </div>
 
           <div className = "form-group">
-            <label htmlFor= "minPrice" >Min Price (£)</label>
+            <label htmlFor= "minPrice" >Min Price (Rs.)</label>
             <input 
               type="number" 
               id= "minPrice" 
@@ -80,7 +80,7 @@ const SearchBar = ({ onSearch }) => {
           </div>
 
           <div className="form-group">
-            <label htmlFor="maxPrice">Max Price (£)</label>
+            <label htmlFor="maxPrice">Max Price (Rs.)</label>
             <input 
               type="number" 
               id="maxPrice" 
