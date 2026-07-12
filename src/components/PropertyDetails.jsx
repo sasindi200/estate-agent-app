@@ -3,6 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 
+const getImageName = (src) => {
+  if (!src) return '';
+  return src.split('/').pop().replace(/\.[^/.]+$/, "");
+};
+
 const PropertyDetails = ({ property, onAddToFavorites, isFavorite }) => {
   const navigate = useNavigate();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -79,7 +84,7 @@ const PropertyDetails = ({ property, onAddToFavorites, isFavorite }) => {
           <button className="details-image-nav prev" onClick={handlePrevImage} aria-label="Previous image">‹</button>
           <img 
             src={property.images[currentImageIndex]} 
-            alt={`Property view ${currentImageIndex + 1}`}
+            alt={getImageName(property.images[currentImageIndex])}
             className="details-main-image"
             onClick={() => setIsLightboxOpen(true)}
             style={{ cursor: 'zoom-in' }}
@@ -96,7 +101,7 @@ const PropertyDetails = ({ property, onAddToFavorites, isFavorite }) => {
             <img 
               key={index}
               src={image}
-              alt={`Thumbnail view ${index + 1}`}
+              alt={getImageName(image)}
               className={`details-thumbnail ${index === currentImageIndex ? 'active' : ''}`}
               onClick={() => handleThumbnailClick(index)}
             />
@@ -155,7 +160,7 @@ const PropertyDetails = ({ property, onAddToFavorites, isFavorite }) => {
             <div className="floorplan-image-container">
               <img 
                 src={property.floorPlan || property.images[0]} 
-                alt="Floor plan layout"
+                alt={getImageName(property.floorPlan || property.images[0])} 
                 className="details-floor-plan-image"
               />
             </div>
@@ -190,7 +195,7 @@ const PropertyDetails = ({ property, onAddToFavorites, isFavorite }) => {
             <div className="lightbox-image-wrapper">
               <img 
                 src={property.images[currentImageIndex]} 
-                alt={`Fullscreen view ${currentImageIndex + 1}`}
+                alt={getImageName(property.images[currentImageIndex])}
                 className="lightbox-image"
               />
               <div className="lightbox-caption">

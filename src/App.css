@@ -320,6 +320,22 @@ body {
   z-index: 5;
 }
 
+.card-favorite-btn svg {
+  width: 18px !important;
+  height: 18px !important;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  stroke: #475569 !important;
+  fill: none !important;
+  transition: all 0.2s ease;
+}
+
+.card-favorite-btn.active svg {
+  stroke: #ef4444 !important;
+  fill: #ef4444 !important;
+}
+
 .card-favorite-btn:hover {
   transform: scale(1.1);
   background-color: #ffffff;
@@ -328,6 +344,15 @@ body {
 
 .card-favorite-btn.active {
   color: var(--danger-color);
+  background-color: rgba(254, 226, 226, 0.95);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  animation: heartPulse 0.3s ease-in-out;
+}
+
+@keyframes heartPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
 }
 
 .property-card-info {

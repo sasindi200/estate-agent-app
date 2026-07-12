@@ -37,8 +37,8 @@ const PropertyCard = ({ property, onAddToFavorites, isFavorite }) => {
             viewBox="0 0 24 24" 
             width="18" 
             height="18" 
-            fill={isFavorite ? "#ef4444" : "none"} 
-            stroke={isFavorite ? "#ef4444" : "currentColor"} 
+            fill={isFavorite ? "#cb0e0e" : "none"} 
+            stroke={isFavorite ? "#ef0909" : "#475569"} 
             strokeWidth="2.5" 
             strokeLinecap="round" 
             strokeLinejoin="round"

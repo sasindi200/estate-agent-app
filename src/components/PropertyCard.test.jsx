@@ -26,7 +26,7 @@ describe('PropertyCard Component - UI Rendering', () => {
       day: 15,
       year: 2025
     },
-    images: ['/images/prop1_1.jpg']
+    images: ['/images/prop1_1.jpg' ]
   };
 
   test('renders property text content correctly', () => {

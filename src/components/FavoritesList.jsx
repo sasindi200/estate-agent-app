@@ -112,7 +112,7 @@ const FavoritesList = ({ favorites, onRemove, onClear, onAddToFavorites }) => {
                 <circle cx="15" cy="19" r="1"></circle>
               </svg>
             </div>
-            <p>Drag properties here or click the star icon to add favorites</p>
+            <p>Drag properties here or click the heart icon to add favorites</p>
           </div>
         )}
       </div>
