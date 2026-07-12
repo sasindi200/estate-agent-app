@@ -48,7 +48,7 @@ function PropertyDetailPageContent({ properties, addToFavorites, favorites }) {
   );
 }
 
-function SearchContent({ properties, filteredProperties, favorites, onSearch, addToFavorites, removeFavoritesFromList, clearFavorites, sortBy, onSortChange }) {
+function SearchContent({ filteredProperties, favorites, onSearch, addToFavorites, removeFavoritesFromList, clearFavorites, sortBy, onSortChange }) {
   return (
     <div className="App">
       <SearchBar onSearch={onSearch} />
@@ -76,17 +76,6 @@ function AppContent() {
   const [filteredProperties, setFilteredProperties] = useState([]);
   const [favorites, setFavorites] = useState([]);
   const [sortBy, setSortBy] = useState('newest');
-  const [searchCriteria, setSearchCriteria] = useState({
-    type: '',
-    minPrice: '',
-    maxPrice: '',
-    minBedrooms: '',
-    maxBedrooms: '',
-    postcode: '',
-    dateFrom: '',
-    dateTo: ''
-  });
-
   // Load properties from JSON
   useEffect(() => {
     const fetchProperties = async () => {
@@ -104,7 +93,6 @@ function AppContent() {
 
   // Search/Filter function
   const handleSearch = (criteria) => {
-    setSearchCriteria(criteria);
     const filtered = filterProperties(properties, criteria);
     setFilteredProperties(filtered);
   };

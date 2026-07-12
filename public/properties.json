@@ -13,15 +13,15 @@
             "postcode": "BR8",
             "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2468.5!2d0.225!3d51.428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48769d7a1c1c1c1d%3A0x1c1c1c1c1c1c1c1c!2sKnockhall%20Lane%2C%20Swanley%2C%20BR8!5e0!3m2!1sen!2suk!4v1234567890",
             "images": [
-                "/images/prop1_1.jpg",
-                "/images/prop1_2.jpg",
-                "/images/prop1_3.jpg",
-                "/images/prop1_4.jpg",
-                "/images/prop1_5.jpg",
-                "/images/prop1_6.jpg",
-                "/images/prop1_7.jpg"
+                "images/prop1_1.jpg",
+                "images/prop1_2.jpg",
+                "images/prop1_3.jpg",
+                "images/prop1_4.jpg",
+                "images/prop1_5.jpg",
+                "images/prop1_6.jpg",
+                "images/prop1_7.jpg"
             ],
-            "floorPlan": "/images/prop1_8.jpg",
+            "floorPlan": "images/prop1_8.jpg",
             "url":"properties/prop1.html",
             "added": {
                 "month":"October",
@@ -42,14 +42,14 @@
             "postcode": "BR5",
             "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2481.5!2d0.054!3d51.388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876784abc1c1c1d%3A0x2c2c2c2c2c2c2c2c!2sPetts%20Wood%20Road%2C%20Petts%20Wood%2C%20Orpington%2C%20BR5!5e0!3m2!1sen!2suk!4v1234567890",
             "images": [
-                "/images/prop2_1.jpg",
-                "/images/prop2_2.jpg",
-                "/images/prop2_3.jpg",
-                "/images/prop2_4.jpg",
-                "/images/prop2_5.jpg",
-                "/images/prop2_6.jpg"
+                "images/prop2_1.jpg",
+                "images/prop2_2.jpg",
+                "images/prop2_3.jpg",
+                "images/prop2_4.jpg",
+                "images/prop2_5.jpg",
+                "images/prop2_6.jpg"
             ],
-            "floorPlan": "/images/prop2_8.jpg",
+            "floorPlan": "images/prop2_8.jpg",
             "url":"properties/prop2.html",
             "added": {
                 "month":"December",
@@ -70,14 +70,14 @@
             "postcode": "BR1",
             "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2478.3!2d-0.011!3d51.409!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876773abc1c1c1d%3A0x3c3c3c3c3c3c3c3c!2sHigh%20Street%2C%20Bromley%20Town%20Centre%2C%20BR1!5e0!3m2!1sen!2suk!4v1234567890",
             "images": [
-                "/images/prop3_1.jpg",
-                "/images/prop3_2.jpg",
-                "/images/prop3_3.jpg",
-                "/images/prop3_4.jpg",
-                "/images/prop3_5.jpg",
-                "/images/prop3_6.jpg"
+                "images/prop3_1.jpg",
+                "images/prop3_2.jpg",
+                "images/prop3_3.jpg",
+                "images/prop3_4.jpg",
+                "images/prop3_5.jpg",
+                "images/prop3_6.jpg"
             ],
-            "floorPlan": "/images/prop3_8.jpg",
+            "floorPlan": "images/prop3_8.jpg",
             "url":"properties/prop3.html",
             "added": {
                 "month":"October",
@@ -98,14 +98,14 @@
             "postcode": "BR6",
             "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2490.2!2d0.089!3d51.369!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876710abc1c1c1d%3A0x4c4c4c4c4c4c4c4c!2sDarrick%20Wood%20Road%2C%20Orpington%2C%20BR6!5e0!3m2!1sen!2suk!4v1234567890",
             "images": [
-                "/images/prop4_1.jpg",
-                "/images/prop4_2.jpg",
-                "/images/prop4_3.jpg",
-                "/images/prop4_4.jpg",
-                "/images/prop4_5.jpg",
-                "/images/prop4_6.jpg"
+                "images/prop4_1.jpg",
+                "images/prop4_2.jpg",
+                "images/prop4_3.jpg",
+                "images/prop4_4.jpg",
+                "images/prop4_5.jpg",
+                "images/prop4_6.jpg"
             ],
-            "floorPlan": "/images/prop4_8.jpg",
+            "floorPlan": "images/prop4_8.jpg",
             "url":"properties/prop4.html",
             "added": {
                 "month":"March",
@@ -126,15 +126,15 @@
             "postcode": "BR3",
             "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2475.9!2d-0.041!3d51.427!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48767d1abc1c1c1d%3A0x5c5c5c5c5c5c5c5c!2sRavensway%20Drive%2C%20Beckenham%2C%20BR3!5e0!3m2!1sen!2suk!4v1234567890",
             "images": [
-                "/images/prop5_1.jpg",
-                "/images/prop5_2.jpg",
-                "/images/prop5_3.jpg",
-                "/images/prop5_4.jpg",
-                "/images/prop5_5.jpg",
-                "/images/prop5_6.jpg",
-                "/images/prop5_7.jpg"
+                "images/prop5_1.jpg",
+                "images/prop5_2.jpg",
+                "images/prop5_3.jpg",
+                "images/prop5_4.jpg",
+                "images/prop5_5.jpg",
+                "images/prop5_6.jpg",
+                "images/prop5_7.jpg"
             ],
-            "floorPlan": "/images/prop5_8.jpg",
+            "floorPlan": "images/prop5_8.jpg",
             "url":"properties/prop5.html",
             "added": {
                 "month":"November",
@@ -155,14 +155,14 @@
             "postcode": "BR2",
             "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2470.5!2d0.141!3d51.407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876894abc1c1c1d%3A0x6c6c6c6c6c6c6c6c!2sTudor%20Avenue%2C%20Sevenoaks%2C%20BR2!5e0!3m2!1sen!2suk!4v1234567890",
             "images": [
-                "/images/prop6_1.jpg",
-                "/images/prop6_2.jpg",
-                "/images/prop6_3.jpg",
-                "/images/prop6_4.jpg",
-                "/images/prop6_5.jpg",
-                "/images/prop6_6.jpg"
+                "images/prop6_1.jpg",
+                "images/prop6_2.jpg",
+                "images/prop6_3.jpg",
+                "images/prop6_4.jpg",
+                "images/prop6_5.jpg",
+                "images/prop6_6.jpg"
             ],
-            "floorPlan": "/images/prop6_8.jpg",
+            "floorPlan": "images/prop6_8.jpg",
             "url":"properties/prop6.html",
             "added": {
                 "month":"February",
@@ -183,15 +183,15 @@
             "postcode": "BR8",
             "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2468.8!2d0.205!3d51.425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48769e1abc1c1c1d%3A0x7c7c7c7c7c7c7c7c!2sRectory%20Lane%2C%20Cray%20Valley%2C%20BR8!5e0!3m2!1sen!2suk!4v1234567890",
             "images": [
-                "/images/prop7_1.jpg",
-                "/images/prop7_2.jpg",
-                "/images/prop7_3.jpg",
-                "/images/prop7_4.jpg",
-                "/images/prop7_5.jpg",
-                "/images/prop7_6.jpg",
-                "/images/prop7_7.jpg"
+                "images/prop7_1.jpg",
+                "images/prop7_2.jpg",
+                "images/prop7_3.jpg",
+                "images/prop7_4.jpg",
+                "images/prop7_5.jpg",
+                "images/prop7_6.jpg",
+                "images/prop7_7.jpg"
             ],
-            "floorPlan": "/images/prop7_8.jpg",
+            "floorPlan": "images/prop7_8.jpg",
             "url":"properties/prop7.html",
             "added": {
                 "month":"March",
