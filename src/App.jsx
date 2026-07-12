@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useParams } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, useParams } from 'react-router-dom';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
@@ -91,7 +91,7 @@ function AppContent() {
   useEffect(() => {
     const fetchProperties = async () => {
       try {
-        const response = await fetch('/properties.json');
+        const response = await fetch(`${import.meta.env.BASE_URL}properties.json`);
         const data = await response.json();
         setProperties(data.properties);
         setFilteredProperties(data.properties);
