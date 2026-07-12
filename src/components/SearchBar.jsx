@@ -1,4 +1,12 @@
 import React, { useState } from 'react';
+import { 
+  FormControl, 
+  InputLabel, 
+  Select, 
+  MenuItem, 
+  TextField, 
+  Button 
+} from '@mui/material';
 
 const SearchBar = ({ onSearch }) => {
   const [formData, setFormData] = useState({
@@ -15,7 +23,7 @@ const SearchBar = ({ onSearch }) => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
-    ...prev,
+      ...prev,
       [name]: value
     }));
   };
@@ -41,133 +49,192 @@ const SearchBar = ({ onSearch }) => {
   };
 
   return (
-    <section className = "search-container">
-      <h1>Find Your Dream Property</h1>
-      <h3>Search properties by type, price, bedrooms, location, and date</h3>
-      
-      <form onSubmit=  {handleSubmit}  className= "search-form" >
-        <div className= "form-row">
-          <div className  =" form-group">
-            <label htmlFor= "type">Property Type</label>
-            <select 
-              id= "type" 
-              name= "type" 
-              value= {formData.type}
-              onChange= {handleChange}
-              className= "form-control"
+    <div className="search-section">
+      <div className="search-banner">
+        <h1>Find Your Dream Property</h1>
+        <p>Search properties by type, price, bedrooms, location, and date to discover the perfect home for your future.</p>
+      </div>
+      <div className="search-card-wrapper">
+        <form onSubmit={handleSubmit} className="search-form-custom">
+          <div className="search-grid">
+            <div className="search-field">
+              <FormControl fullWidth size="small" variant="outlined">
+                <InputLabel id="type-label">PROPERTY TYPE</InputLabel>
+                <Select
+                  labelId="type-label"
+                  id="type"
+                  name="type"
+                  value={formData.type}
+                  onChange={handleChange}
+                  label="PROPERTY TYPE"
+                >
+                  <MenuItem value="">Any</MenuItem>
+                  <MenuItem value="house">House</MenuItem>
+                  <MenuItem value="flat">Flat</MenuItem>
+                  <MenuItem value="apartment">Apartment</MenuItem>
+                  <MenuItem value="villa">Villa</MenuItem>
+                  <MenuItem value="townhouse">Townhouse</MenuItem>
+                </Select>
+              </FormControl>
+            </div>
+
+            <div className="search-field">
+              <TextField
+                fullWidth
+                size="small"
+                id="minPrice"
+                name="minPrice"
+                label="MIN PRICE (RS.)"
+                type="number"
+                value={formData.minPrice}
+                onChange={handleChange}
+                placeholder="No minimum"
+                inputProps={{ min: 0 }}
+              />
+            </div>
+
+            <div className="search-field">
+              <TextField
+                fullWidth
+                size="small"
+                id="maxPrice"
+                name="maxPrice"
+                label="MAX PRICE (RS.)"
+                type="number"
+                value={formData.maxPrice}
+                onChange={handleChange}
+                placeholder="No maximum"
+                inputProps={{ min: 0 }}
+              />
+            </div>
+
+            <div className="search-field">
+              <TextField
+                fullWidth
+                size="small"
+                id="postcode"
+                name="postcode"
+                label="POSTCODE AREA"
+                type="text"
+                value={formData.postcode}
+                onChange={handleChange}
+                placeholder="e.g. BR1, NW1"
+              />
+            </div>
+
+            <div className="search-field">
+              <FormControl fullWidth size="small" variant="outlined">
+                <InputLabel id="min-bedrooms-label">MIN BEDROOMS</InputLabel>
+                <Select
+                  labelId="min-bedrooms-label"
+                  id="minBedrooms"
+                  name="minBedrooms"
+                  value={formData.minBedrooms}
+                  onChange={handleChange}
+                  label="MIN BEDROOMS"
+                >
+                  <MenuItem value="">Any</MenuItem>
+                  <MenuItem value="1">1</MenuItem>
+                  <MenuItem value="2">2</MenuItem>
+                  <MenuItem value="3">3</MenuItem>
+                  <MenuItem value="4">4</MenuItem>
+                  <MenuItem value="5">5</MenuItem>
+                </Select>
+              </FormControl>
+            </div>
+
+            <div className="search-field">
+              <FormControl fullWidth size="small" variant="outlined">
+                <InputLabel id="max-bedrooms-label">MAX BEDROOMS</InputLabel>
+                <Select
+                  labelId="max-bedrooms-label"
+                  id="maxBedrooms"
+                  name="maxBedrooms"
+                  value={formData.maxBedrooms}
+                  onChange={handleChange}
+                  label="MAX BEDROOMS"
+                >
+                  <MenuItem value="">Any</MenuItem>
+                  <MenuItem value="1">1</MenuItem>
+                  <MenuItem value="2">2</MenuItem>
+                  <MenuItem value="3">3</MenuItem>
+                  <MenuItem value="4">4</MenuItem>
+                  <MenuItem value="5">5</MenuItem>
+                </Select>
+              </FormControl>
+            </div>
+
+            <div className="search-field">
+              <TextField
+                fullWidth
+                size="small"
+                id="dateFrom"
+                name="dateFrom"
+                label="ADDED AFTER"
+                type="date"
+                value={formData.dateFrom}
+                onChange={handleChange}
+                InputLabelProps={{ shrink: true }}
+              />
+            </div>
+
+            <div className="search-field">
+              <TextField
+                fullWidth
+                size="small"
+                id="dateTo"
+                name="dateTo"
+                label="ADDED BEFORE"
+                type="date"
+                value={formData.dateTo}
+                onChange={handleChange}
+                InputLabelProps={{ shrink: true }}
+              />
+            </div>
+          </div>
+
+          <div className="search-actions">
+            <Button 
+              type="submit" 
+              variant="contained" 
+              color="primary"
+              size="large"
+              sx={{ 
+                textTransform: 'none',
+                fontWeight: 600,
+                fontFamily: 'var(--primary-font)',
+                borderRadius: '8px',
+                px: 4
+              }}
             >
-              <option value = "" >Any</option>
-              <option value = "house">House</option>
-              <option value = "flat">Flat</option>
-              <option value = "apartment">Apartment</option>
-              <option value = "villa">Villa</option>
-              <option value = "townhouse">Townhouse</option>
-
-            </select>
+              Search Properties
+            </Button>
+            <Button 
+              type="button" 
+              onClick={handleReset} 
+              variant="outlined" 
+              color="inherit"
+              size="large"
+              sx={{ 
+                textTransform: 'none',
+                fontWeight: 500,
+                fontFamily: 'var(--primary-font)',
+                borderRadius: '8px',
+                borderColor: 'var(--border-color)',
+                color: 'var(--text-medium)',
+                '&:hover': {
+                  borderColor: 'var(--text-light)',
+                  backgroundColor: 'rgba(0, 0, 0, 0.02)'
+                },
+                px: 4
+              }}
+            >
+              Reset Filters
+            </Button>
           </div>
-
-          <div className = "form-group">
-            <label htmlFor= "minPrice" >Min Price (Rs.)</label>
-            <input 
-              type="number" 
-              id= "minPrice" 
-              name="minPrice"
-              value= {formData.minPrice}
-              onChange=  {handleChange}
-              placeholder= "No minimum"
-              className=  "form-control"
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="maxPrice">Max Price (Rs.)</label>
-            <input 
-              type="number" 
-              id="maxPrice" 
-              name="maxPrice"
-              value = {formData.maxPrice}
-              onChange={handleChange}
-              placeholder= "No maximum"
-              className= "form-control"
-            />
-          </div>
-        </div>
-
-        <div className="form-row">
-          <div className="form-group">
-            <label htmlFor="minBedrooms">Min Bedrooms</label>
-            <input 
-              type="number" 
-              id="minBedrooms" 
-              name="minBedrooms"
-              value={formData.minBedrooms}
-              onChange={handleChange}
-              min="0"
-              placeholder="Any"
-              className="form-control"
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="maxBedrooms">Max Bedrooms</label>
-            <input 
-              type="number" 
-              id="maxBedrooms" 
-              name="maxBedrooms"
-              value={formData.maxBedrooms}
-              onChange={handleChange}
-              min="0"
-              placeholder="Any"
-              className="form-control"
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="postcode">Postcode Area </label>
-            <input 
-              type="text" 
-              id="postcode" 
-              name="postcode"
-              value={formData.postcode}
-              onChange= {handleChange}
-              placeholder="e.g. BR1, NW1"
-              className="form-control"
-            />
-          </div>
-        </div>
-
-        <div className="form-row">
-          <div className="form-group">
-            <label htmlFor="dateFrom">Added After</label>
-            <input 
-              type="date" 
-              id="dateFrom" 
-              name="dateFrom"
-              value={formData.dateFrom}
-              onChange={handleChange}
-              className="form-control"
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="dateTo">Added Before</label>
-            <input 
-              type="date" 
-              id="dateTo" 
-              name="dateTo"
-              value={formData.dateTo}
-              onChange={handleChange}
-              className="form-control"
-            />
-          </div>
-        </div>
-
-        <div className="button-group">
-          <button type="submit" className="btn btn-primary">Search Properties</button>
-          <button type="button" onClick={handleReset} className="btn btn-secondary"> Reset Filters</button>
-        </div>
-      </form>
-    </section>
+        </form>
+      </div>
+    </div>
   );
 };
 
