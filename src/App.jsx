@@ -1,17 +1,81 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useParams } from 'react-router-dom';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
 import SearchBar from './components/SearchBar';
 import PropertyList from './components/PropertyList';
 import PropertyDetails from './components/PropertyDetails';
 import FavoritesList from './components/FavoritesList';
+import { filterProperties, addToFavoritesIfNotDuplicate, removeFromFavorites, clearAllFavorites, sortProperties } from './utils/propertyHelpers';
 import './App.css';
 
-function App() {
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#1976d2',
+    },
+    secondary: {
+      main: '#dc004e',
+    },
+  },
+});
+
+function PropertyDetailPageContent({ properties, addToFavorites, favorites }) {
+  const { id } = useParams();
+  const property = properties.find(prop => prop.id === id);
+
+  if (!property) {
+    return (
+      <div className="App">
+        <div style={{ padding: '2rem', textAlign: 'center' }}>
+          <h2>Property not found</h2>
+          <a href="/">← Back to Search</a>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="App">
+      <PropertyDetails 
+        property={property}
+        onAddToFavorites={addToFavorites}
+        isFavorite={favorites.some(fav => fav.id === property.id)}
+      />
+    </div>
+  );
+}
+
+function SearchContent({ properties, filteredProperties, favorites, onSearch, addToFavorites, removeFavoritesFromList, clearFavorites, sortBy, onSortChange }) {
+  return (
+    <div className="App">
+      <SearchBar onSearch={onSearch} />
+      <div className="main-container">
+        <PropertyList 
+          properties={filteredProperties}
+          onAddToFavorites={addToFavorites}
+          favorites={favorites}
+          sortBy={sortBy}
+          onSortChange={onSortChange}
+        />
+        <FavoritesList 
+          favorites={favorites}
+          onRemove={removeFavoritesFromList}
+          onClear={clearFavorites}
+          onAddToFavorites={addToFavorites}
+        />
+      </div>
+    </div>
+  );
+}
+
+function AppContent() {
   const [properties, setProperties] = useState([]);
   const [filteredProperties, setFilteredProperties] = useState([]);
   const [favorites, setFavorites] = useState([]);
-  const [selectedProperty, setSelectedProperty] = useState(null);
+  const [sortBy, setSortBy] = useState('newest');
   const [searchCriteria, setSearchCriteria] = useState({
     type: '',
     minPrice: '',
@@ -41,111 +105,69 @@ function App() {
   // Search/Filter function
   const handleSearch = (criteria) => {
     setSearchCriteria(criteria);
-    
-    const filtered = properties.filter(property => {
-      // Type filter
-      if (criteria.type && criteria.type !== 'any' && property.type.toLowerCase() !== criteria.type.toLowerCase()) {
-        return false;
-      }
-
-      // Price filters
-      if (criteria.minPrice && property.price < parseInt(criteria.minPrice)) {
-        return false;
-      }
-      if (criteria.maxPrice && property.price > parseInt(criteria.maxPrice)) {
-        return false;
-      }
-
-      // Bedroom filters
-      if (criteria.minBedrooms && property.bedrooms < parseInt(criteria.minBedrooms)) {
-        return false;
-      }
-      if (criteria.maxBedrooms && property.bedrooms > parseInt(criteria.maxBedrooms)) {
-        return false;
-      }
-
-      // Postcode filter
-      if (criteria.postcode && !property.postcode.toLowerCase().includes(criteria.postcode.toLowerCase())) {
-        return false;
-      }
-
-      // Date filters
-      if (criteria.dateFrom || criteria.dateTo) {
-        const propertyDate = new Date(property.added.year, getMonthNumber(property.added.month) - 1, property.added.day);
-        
-        if (criteria.dateFrom) {
-          const fromDate = new Date(criteria.dateFrom);
-          if (propertyDate < fromDate) return false;
-        }
-        
-        if (criteria.dateTo) {
-          const toDate = new Date(criteria.dateTo);
-          if (propertyDate > toDate) return false;
-        }
-      }
-
-      return true;
-    });
-
+    const filtered = filterProperties(properties, criteria);
     setFilteredProperties(filtered);
-  };
-
-  const getMonthNumber = (monthName) => {
-    const months = {
-      'January': 1, 'February': 2, 'March': 3, 'April': 4,
-      'May': 5, 'June': 6, 'July': 7, 'August': 8,
-      'September': 9, 'October': 10, 'November': 11, 'December': 12
-    };
-    return months[monthName] || 1;
   };
 
   // Add to favorites
   const addToFavorites = (property) => {
-    if (!favorites.find(fav => fav.id === property.id)) {
-      setFavorites([...favorites, property]);
-    }
+    setFavorites(addToFavoritesIfNotDuplicate(favorites, property));
   };
 
   // Remove from favorites
-  const removeFromFavorites = (propertyId) => {
-    setFavorites(favorites.filter(fav => fav.id !== propertyId));
+  const removeFavoritesFromList = (propertyId) => {
+    setFavorites(removeFromFavorites(favorites, propertyId));
   };
 
   // Clear all favorites
   const clearFavorites = () => {
-    setFavorites([]);
+    setFavorites(clearAllFavorites());
   };
 
+  const sortedProperties = sortProperties(filteredProperties, sortBy);
+
   return (
-    <DndProvider backend={HTML5Backend}>
-      <div className="App">
-        <SearchBar onSearch={handleSearch} />
-        
-        {selectedProperty ? (
-          <PropertyDetails 
-            property={selectedProperty}
-            onBack={() => setSelectedProperty(null)}
-            onAddToFavorites={addToFavorites}
-            isFavorite={favorites.some(fav => fav.id === selectedProperty.id)}
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <SearchContent 
+            properties={properties}
+            filteredProperties={sortedProperties}
+            favorites={favorites}
+            onSearch={handleSearch}
+            addToFavorites={addToFavorites}
+            removeFavoritesFromList={removeFavoritesFromList}
+            clearFavorites={clearFavorites}
+            sortBy={sortBy}
+            onSortChange={setSortBy}
           />
-        ) : (
-          <div className="main-container">
-            <PropertyList 
-              properties={filteredProperties}
-              onSelectProperty={setSelectedProperty}
-              onAddToFavorites={addToFavorites}
-              favorites={favorites}
-            />
-            <FavoritesList 
-              favorites={favorites}
-              onRemove={removeFromFavorites}
-              onClear={clearFavorites}
-              onSelectProperty={setSelectedProperty}
-            />
-          </div>
-        )}
-      </div>
-    </DndProvider>
+        }
+      />
+      <Route
+        path="/property/:id"
+        element={
+          <PropertyDetailPageContent 
+            properties={properties}
+            addToFavorites={addToFavorites}
+            favorites={favorites}
+          />
+        }
+      />
+    </Routes>
+  );
+}
+
+function App() {
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <DndProvider backend={HTML5Backend}>
+        <Router>
+          <AppContent />
+        </Router>
+      </DndProvider>
+    </ThemeProvider>
   );
 }
 
