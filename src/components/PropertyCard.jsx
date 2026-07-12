@@ -27,24 +27,14 @@ const PropertyCard = ({ property, onAddToFavorites, isFavorite }) => {
         {property.id === 'prop1' && (
           <span className="new-listing-badge">NEW LISTING</span>
         )}
-        <button 
+        <button
           className={`card-favorite-btn ${isFavorite ? 'active' : ''}`}
           onClick={handleFavoriteClick}
           aria-label={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
         >
-          <svg 
-            xmlns="http://www.w3.org/2000/svg" 
-            viewBox="0 0 24 24" 
-            width="18" 
-            height="18" 
-            fill={isFavorite ? "#cb0e0e" : "none"} 
-            stroke={isFavorite ? "#ef0909" : "#475569"} 
-            strokeWidth="2.5" 
-            strokeLinecap="round" 
-            strokeLinejoin="round"
-          >
-            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-          </svg>
+          <span className="card-favorite-heart" role="img" aria-hidden="true">
+            {isFavorite ? '♥' : '♡'}
+          </span>
         </button>
       </div>
       <div className="property-card-info">

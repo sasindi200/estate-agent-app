@@ -320,20 +320,18 @@ body {
   z-index: 5;
 }
 
-.card-favorite-btn svg {
-  width: 18px !important;
-  height: 18px !important;
-  display: block !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  stroke: #475569 !important;
-  fill: none !important;
-  transition: all 0.2s ease;
+.card-favorite-heart {
+  font-size: 22px;
+  line-height: 1;
+  color: #475569;
+  display: block;
+  user-select: none;
+  transition: color 0.2s ease;
 }
 
-.card-favorite-btn.active svg {
-  stroke: #ef4444 !important;
-  fill: #ef4444 !important;
+/* Red filled heart only when the property is favorited */
+.card-favorite-btn.active .card-favorite-heart {
+  color: #ef4444;
 }
 
 .card-favorite-btn:hover {
@@ -344,8 +342,7 @@ body {
 
 .card-favorite-btn.active {
   color: var(--danger-color);
-  background-color: rgba(254, 226, 226, 0.95);
-  border: 1px solid rgba(239, 68, 68, 0.2);
+  background-color: rgba(255, 255, 255, 0.92);
   animation: heartPulse 0.3s ease-in-out;
 }
 
